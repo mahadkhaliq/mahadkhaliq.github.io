@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahad Khaliq - AI Researcher & Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+            background: #000;
+            color: #fff;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            height: 100vh;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            color: #a8b2d1;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            padding: 12px 30px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid #667eea;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            background: #000;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            z-index: 10;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .research-card {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .research-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .research-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        }
+
+        .projects-content {
+            max-width: 1200px;
+            z-index: 10;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .project-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            padding: 6px 16px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #667eea;
+        }
+
+        /* Publications Section */
+        .publications {
+            background: #000;
+        }
+
+        .publications-content {
+            max-width: 1000px;
+            z-index: 10;
+        }
+
+        .publication-list {
+            margin-top: 40px;
+        }
+
+        .publication-item {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .publication-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .skills-content {
+            max-width: 1200px;
+            z-index: 10;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-item {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #000;
+            height: 100vh;
+        }
+
+        .contact-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .contact h2 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-email {
+            font-size: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: #764ba2;
+        }
+
+        /* Parallax Elements */
+        .parallax-item {
+            position: absolute;
+            transition: transform 0.1s ease-out;
+            pointer-events: none;
+        }
+
+        .floating-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent);
+            backdrop-filter: blur(20px);
+        }
+
+        .floating-square {
+            width: 200px;
+            height: 200px;
+            background: rgba(118, 75, 162, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            transform: rotate(45deg);
+        }
+
+        .floating-chip {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="parallax-item floating-circle" id="circle1" style="left: 10%; top: 15%;"></div>
+        <div class="parallax-item floating-square" id="square1" style="right: 8%; top: 25%;"></div>
+        <div class="parallax-item floating-chip" id="chip1" style="left: 15%; bottom: 20%;"></div>
+        
+        <div class="hero-content" id="heroContent">
+            <h1>Mahad Khaliq</h1>
+            <p class="subtitle">PhD Student | AI Researcher | Engineer</p>
+            <p class="tagline">Specializing in Medical AI, Computer Vision, and Embedded Systems. Building intelligent solutions at the intersection of hardware and deep learning.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/mahadkhaliq" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/mahad-khaliq/" target="_blank">LinkedIn</a>
+                <a href="mailto:mahadkhaliqjbd@gmail.com">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about">
+        <div class="parallax-item floating-circle" id="circle2" style="right: 5%; top: 10%;"></div>
+        <div class="parallax-item floating-chip" id="chip2" style="left: 8%; top: 50%;"></div>
+        
+        <div class="about-content" id="aboutContent">
+            <h2>Research Areas</h2>
+            <div class="research-areas">
+                <div class="research-card">
+                    <h3>🫀 Medical AI</h3>
+                    <p>Deep learning for echocardiography and ECG analysis. Developing AI-powered diagnostic tools for cardiac health monitoring.</p>
+                </div>
+                <div class="research-card">
+                    <h3>🧬 Genomics</h3>
+                    <p>Large-scale genome analysis with UK Biobank data. Working on PrediXcan, Enformer, and genomic data pipelines.</p>
+                </div>
+                <div class="research-card">
+                    <h3>🌾 Precision Agriculture</h3>
+                    <p>UAV/drone missions, hyperspectral imagery analysis, and NDVI enhancement using GANs for crop health monitoring.</p>
+                </div>
+                <div class="research-card">
+                    <h3>🌍 Air Quality</h3>
+                    <p>IoT-based PM2.5 monitoring networks. Satellite imagery and machine learning for ground-level air quality prediction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects">
+        <div class="parallax-item floating-square" id="square2" style="left: 5%; top: 15%;"></div>
+        <div class="parallax-item floating-circle" id="circle3" style="right: 10%; bottom: 20%;"></div>
+        
+        <div class="projects-content" id="projectsContent">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Smart ECG Device</h3>
+                    <p>AI-powered ECG device with real-time analysis and de-identification system. Supports multiple medical devices including Philips, Mindray, and Mortara.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Raspberry Pi</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Signal Processing</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Medical Imaging Analysis</h3>
+                    <p>Echocardiography analysis using deep learning. Implementation of GANs, object detection, and segmentation for cardiac imaging.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">GANs</span>
+                        <span class="tech-tag">Medical AI</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>PM2.5 Monitoring Network</h3>
+                    <p>Low-cost air quality monitoring system with satellite imagery integration. Deployed ESP32-based IoT sensors across South Asia.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NetCDF</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>NDVI Enhancement</h3>
+                    <p>Using ESRGANs to enhance NDVI calculation from low-resolution satellite imagery for precision agriculture applications.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">GANs</span>
+                        <span class="tech-tag">Satellite Imagery</span>
+                        <span class="tech-tag">Agriculture</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Genome Analysis Pipeline</h3>
+                    <p>Automation scripts for UK Biobank data processing. Format conversion, variant calling, and GWAS analysis.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Bioinformatics</span>
+                        <span class="tech-tag">Cloud Computing</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Edge AI Deployment</h3>
+                    <p>Deep learning model optimization and deployment on Jetson Nano and Raspberry Pi for real-time inference.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Jetson Nano</span>
+                        <span class="tech-tag">Edge Computing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section publications">
+        <div class="parallax-item floating-chip" id="chip3" style="right: 10%; top: 20%;"></div>
+        
+        <div class="publications-content" id="pubContent">
+            <h2>Publications</h2>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <h3>Enhancing NDVI Calculation of Low-Resolution Imagery using ESRGANs</h3>
+                    <p>Advanced super-resolution techniques for satellite imagery in precision agriculture.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Enhancing Medical Data Analysis through AI-Enhanced Locally Linear Embedding</h3>
+                    <p>Applications in medical point location and imagery analysis.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Sustaining Low-Cost PM2.5 Monitoring Networks in South Asia</h3>
+                    <p>Technical challenges and solutions for environmental monitoring systems.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Predicting Ground-Level PM2.5 Using Satellite Imagery and Machine Learning</h3>
+                    <p>High-resolution satellite imagery analysis with ground-based validation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills">
+        <div class="parallax-item floating-circle" id="circle4" style="left: 5%; top: 25%;"></div>
+        <div class="parallax-item floating-square" id="square3" style="right: 8%; bottom: 20%;"></div>
+        
+        <div class="skills-content" id="skillsContent">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Keras</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">GANs</span>
+                        <span class="skill-item">LSTMs</span>
+                        <span class="skill-item">Computer Vision</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">OpenCV</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Hardware & Embedded</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Raspberry Pi</span>
+                        <span class="skill-item">Jetson Nano</span>
+                        <span class="skill-item">ESP32</span>
+                        <span class="skill-item">Arduino</span>
+                        <span class="skill-item">IoT</span>
+                        <span class="skill-item">Sensors</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Specialized Areas</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Medical Imaging</span>
+                        <span class="skill-item">Genomics</span>
+                        <span class="skill-item">UAV/Drones</span>
+                        <span class="skill-item">Signal Processing</span>
+                        <span class="skill-item">Edge AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact">
+        <div class="parallax-item floating-chip" id="chip4" style="left: 10%; top: 20%;"></div>
+        <div class="parallax-item floating-circle" id="circle5" style="right: 15%; bottom: 25%;"></div>
+        
+        <div class="contact-content" id="contactContent">
+            <h2>Let's Connect</h2>
+            <p>Interested in collaboration or have questions about my research?</p>
+            <a href="mailto:mahadkhaliqjbd@gmail.com" class="contact-email">mahadkhaliqjbd@gmail.com</a>
+            <div class="social-links" style="margin-top: 40px;">
+                <a href="https://github.com/mahadkhaliq" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/mahad-khaliq/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Define parallax elements with different speeds
+            const parallaxElements = [
+                { id: 'circle1', speed: 0.3 },
+                { id: 'square1', speed: 0.5 },
+                { id: 'chip1', speed: 0.4 },
+                { id: 'heroContent', speed: 0.2 },
+                { id: 'circle2', speed: 0.35 },
+                { id: 'chip2', speed: 0.45 },
+                { id: 'aboutContent', speed: 0.15 },
+                { id: 'square2', speed: 0.4 },
+                { id: 'circle3', speed: 0.3 },
+                { id: 'projectsContent', speed: 0.2 },
+                { id: 'chip3', speed: 0.35 },
+                { id: 'pubContent', speed: 0.25 },
+                { id: 'circle4', speed: 0.3 },
+                { id: 'square3', speed: 0.4 },
+                { id: 'skillsContent', speed: 0.2 },
+                { id: 'chip4', speed: 0.35 },
+                { id: 'circle5', speed: 0.4 },
+                { id: 'contactContent', speed: 0.15 }
+            ];
+
+            parallaxElements.forEach(element => {
+                const el = document.getElementById(element.id);
+                if (el) {
+                    const yPos = -(scrolled * element.speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+
+            // Fade and slide effect for sections
+            const sections = document.querySelectorAll('.research-card, .project-card, .publication-item, .skill-category');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.85;
+                
+                if (isVisible) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                } else {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(30px)';
+                }
+            });
+        });
+
+        // Initial setup
+        document.querySelectorAll('.research-card, .project-card, .publication-item, .skill-category').forEach(item => {
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+        });
+
+        // Trigger initial animation
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
